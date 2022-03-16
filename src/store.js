@@ -4,7 +4,6 @@ import axios from 'axios'
 const state = Vue.observable({
     search: '',
     movies: [],
-    series: [],
     baseURI: 'https://api.themoviedb.org/3',
     flags: {
         it: require('./assets/img/it.png'),
@@ -39,7 +38,8 @@ export function fetchData() {
     })
     .then( res => {
     // console.log( res.data )
-        state.series = res.data.results
+        state.movies.push(...res.data.results)
+        this.search = ''
     })
     .catch( error => {
         console.log( error.response )
