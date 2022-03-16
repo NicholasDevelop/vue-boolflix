@@ -6,7 +6,7 @@
         <img class="flag-icon" v-if="flags[ element.original_language ]" :src="flags[ element.original_language ]"/> 
         <span v-else>{{element.original_language}}</span>
       </p>
-      <p>{{ element.vote_average }}</p>
+      <p>Vote: {{ element.vote_average }}</p>
       <div class="star-wrapper">
         <p class=star-color v-for="(el, i) in 5" :key="i">
           <span v-if="i < stars(element)">&starf;</span>
