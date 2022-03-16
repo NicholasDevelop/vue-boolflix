@@ -1,17 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <Header/>
+
+    <div class="film-container">
+      <Card v-for="movie in movies" :key="movie.id" :element="movie" :flags="flags"/>
+    </div>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Card from './components/CardComponent.vue'
+import Header from './components/HeaderComponent.vue'
+import state from './store.js'
 
 export default {
   name: 'App',
+  computed: {
+    movies: function() {
+      return state.movies
+    },
+    search: function() {
+      return state.search
+    },
+    flags: function() {
+      return state.flags
+    }
+  },
   components: {
-    HelloWorld
+    Header,
+    Card,
   }
 }
 </script>
@@ -22,7 +41,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+  .film-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 }
 </style>
