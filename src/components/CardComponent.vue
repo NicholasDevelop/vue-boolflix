@@ -7,6 +7,12 @@
         <span v-else>{{element.original_language}}</span>
       </p>
       <p>{{ element.vote_average }}</p>
+      <div class="star-wrapper">
+        <p :class="i < stars(el) ? 'star-color' : ''" v-for="(el, i) in 5" :key="i">
+          <span v-if="i < stars(el)">&starf;</span>
+          <span v-else>&star;</span>
+        </p>
+      </div>
     </div>
 </template>
 
@@ -22,11 +28,11 @@ export default {
       type: Object,
     }
   },
-  // methods: {
-  //   stars: function (elemnt){
-  //     return Math.ceil((element.vote_average / 2))
-  //   }
-  // }
+  methods: {
+    stars: function (el){
+      return Math.ceil(el.vote_average / 2)
+    }
+  }
 }
 </script>
 
@@ -37,6 +43,14 @@ export default {
 
     .flag-icon{
       width: 20px;
+    }
+  }
+  .star-wrapper{
+    display: flex;
+    gap: 6px;
+
+    .star-color{
+      color: yellow;
     }
   }
 }
