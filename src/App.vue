@@ -53,7 +53,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
     background-color: #141414;
-    color: rgb(231, 231, 231);
+    color: rgb(240, 238, 238);
     height: 100vh;
   
 
@@ -62,8 +62,8 @@ export default {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px 5px;
-    padding: 120px 20px 40px 20px;
+    gap: 50px 5px;
+    padding: 150px 20px 40px 20px;
   }
 
   .loading{
