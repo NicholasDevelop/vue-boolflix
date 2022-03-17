@@ -4,15 +4,15 @@
       <img class="not-found" v-else src="../assets/img/not-found-image.jpg" alt="">
 
       <div class="card-description">        
-        <h3>Title: {{ element.title || element.name}}</h3>
-        <p>Original Title: {{ element.original_title || element.original_name}} </p>
-        <p>Story: {{ element.overview }}</p>
+        <h3 class="card-title">Title: {{ element.title || element.name}}</h3>
+        <p class="card-original-title">Original Title: {{ element.original_title || element.original_name}} </p>
+        <p class="card-story">Story: {{ element.overview }}</p>
         <p class="language">Language: 
           <img class="flag-icon"
           alt="United States"
           :src="`http://purecatamphetamine.github.io/country-flag-icons/3x2/${getFlag(element.original_language)}.svg`"/>
         </p>
-        <p>Vote: {{ element.vote_average }}</p>
+        <p class="vote">Vote: {{ element.vote_average }}</p>
         <div class="star-wrapper">
           <p class=star-color v-for="(el, i) in 5" :key="i">
             <span v-if="i < stars(element)">&starf;</span>
@@ -74,7 +74,7 @@ export default {
 
   &:hover .card-img, &:hover .not-found{
     transition: 1s;
-    opacity: 0.5;
+    opacity: 0.4;
     transform: scale(1.2);
     z-index: 5;
   }
@@ -96,12 +96,19 @@ export default {
     transform: translateY(-50%);
     visibility: hidden;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
     
     .language{
-  
+      font-weight: 700;
   
       .flag-icon{
         width: 20px;
+    }
+
+    .vote{
+      font-weight: 700;
     }
     
     }
