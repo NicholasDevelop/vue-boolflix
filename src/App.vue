@@ -12,7 +12,7 @@
     <div class="film-container">
       <Card v-for="serie in series" :key="serie.id" :element="serie" :flags="flags"/>
     </div> -->
-    <div class="loading" :class="movies.lenght == 0 ? 'active' : ''">
+    <div class="loading" :class="movies.lenght == '' ? 'active' : ''">
       <div class="spinner"></div>
       <h2>Scrivi nella barra di ricerca il film o la serie tv che vuoi vedere</h2>
     </div>
@@ -72,6 +72,10 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    &.active{
+      display: initial;
+    }
 
     .spinner{
       width: 80px;

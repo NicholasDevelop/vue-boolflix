@@ -72,7 +72,7 @@ export default {
     z-index: 10;
   }
 
-  &:hover .card-img, .not-found{
+  &:hover .card-img, &:hover .not-found{
     transition: 1s;
     opacity: 0.5;
     transform: scale(1.2);

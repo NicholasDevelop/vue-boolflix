@@ -41,6 +41,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 20px 58px;
+    z-index: 9999999;
 
     img{
         width: 200px;
@@ -69,6 +70,10 @@ header{
           font-weight: 700;
           height: 24px;
           width: 70px;
+        }
+
+        &:hover .search-button{
+          box-shadow: 0 0 14px #D81F26;
         }
     }
 }
