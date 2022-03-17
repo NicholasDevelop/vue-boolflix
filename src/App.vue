@@ -12,6 +12,10 @@
     <div class="film-container">
       <Card v-for="serie in series" :key="serie.id" :element="serie" :flags="flags"/>
     </div> -->
+    <div class="loading" :class="movies.lenght == 0 ? 'active' : ''">
+      <div class="spinner"></div>
+      <h2>Scrivi nella barra di ricerca il film o la serie tv che vuoi vedere</h2>
+    </div>
 
   </div>
 </template>
@@ -48,15 +52,52 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-    background-color: #0e0e0e;
+    background-color: #141414;
     color: rgb(231, 231, 231);
+    height: 100vh;
   
 
   .film-container{
     background-color: #141414;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px 5px;
+    padding: 120px 20px 40px 20px;
+  }
+
+  .loading{
+    height: calc(100vh - 320px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .spinner{
+      width: 80px;
+      aspect-ratio: 1;
+      border: 4px solid #D81F26;
+      filter: drop-shadow(0 0 7px #D81F26);
+      border-radius: 50%;
+      margin-bottom: 30px;
+      animation: loading 1.5s linear infinite;
+      border-top: none;
+      border-left: none;
+    }
+
+    @keyframes loading{
+      from {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    h2{
+      font-size: 32px;
+      text-shadow: 0 0 8px #D81F26;
+    }
   }
 }
 </style>

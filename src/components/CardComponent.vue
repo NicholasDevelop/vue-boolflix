@@ -55,14 +55,10 @@ export default {
 .card{
   max-width: 342px;
 
-  .card-img{
+  .card-img, .not-found{
     width: 342px;
-    aspect-ratio: 0.8;
-  }
-
-  .not-found{
-    width: 342px;
-    aspect-ratio: 0.8;
+    border-radius: 7px;
+    aspect-ratio: 0.7;
     object-fit: cover;
   }
 
