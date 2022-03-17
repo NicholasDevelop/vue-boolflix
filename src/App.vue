@@ -3,9 +3,15 @@
 
     <Header/>
 
+    <!-- <h2>Film</h2> -->
     <div class="film-container">
       <Card v-for="movie in movies" :key="movie.id" :element="movie" :flags="flags"/>
     </div>
+
+    <!-- <h2>Series</h2>
+    <div class="film-container">
+      <Card v-for="serie in series" :key="serie.id" :element="serie" :flags="flags"/>
+    </div> -->
 
   </div>
 </template>
@@ -42,6 +48,9 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    background-color: #0e0e0e;
+    color: rgb(231, 231, 231);
+  
 
   .film-container{
     background-color: #141414;
