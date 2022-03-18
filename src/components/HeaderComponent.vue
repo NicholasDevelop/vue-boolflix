@@ -54,7 +54,8 @@ header{
 
         .search-bar{
           background-color: rgba($color: #5247478f, $alpha: 0.3);
-          border-radius: 8px;
+          border-radius: 4px;
+          border: 1px solid rgba(255, 255, 255, 0.7);
           width: 300px;
           height: 24px;
           color: rgba(255, 255, 255, 0.7);
@@ -62,19 +63,21 @@ header{
         }
 
         .search-button{
-          background-color: #D81F26;
-          border-radius: 10px;
-          border: none;
-          color: rgb(27, 26, 26);
+          background-color: #5247478f;
+          border-radius: 4px;
+          border: 1px solid rgba(255, 255, 255, 0.7);
+          color: rgba(255, 255, 255, 0.7);
           font-size: 14px;
           font-weight: 700;
           height: 24px;
           width: 70px;
+          
+          &:hover{
+            box-shadow: 0 0 14px #D81F26;
+            background-color: #D81F26;
+          }
         }
 
-        &:hover .search-button{
-          box-shadow: 0 0 14px #D81F26;
-        }
     }
 }
 </style>
