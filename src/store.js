@@ -24,22 +24,21 @@ export function fetchData() {
     .then( res => {
         console.log( res.data )
         state.movies = res.data.results
-    })
-    .catch( error => {
-        console.log( error.response )
-    }),
-
-    axios.get(`${ state.baseURI }/search/tv`,{
-    params: {
-        api_key: '967f948e33980faf259c08c6cf676913',
-        query: state.search,
-        language: 'it-IT'
-    }
-    })
-    .then( res => {
-    // console.log( res.data )
-        state.movies.push(...res.data.results)
-        this.search = ''
+        axios.get(`${ state.baseURI }/search/tv`,{
+            params: {
+                api_key: '967f948e33980faf259c08c6cf676913',
+                query: state.search,
+                language: 'it-IT'
+            }
+            })
+            .then( res => {
+            // console.log( res.data )
+                state.movies.push(...res.data.results)
+                this.search = ''
+            })
+            .catch( error => {
+                console.log( error.response )
+            })
     })
     .catch( error => {
         console.log( error.response )
